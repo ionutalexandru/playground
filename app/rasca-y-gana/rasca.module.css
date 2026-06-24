@@ -1,0 +1,379 @@
+.body {
+  background-color: #eef7ff; /* Soft sky blue background */
+  color: #333;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.h1 {
+  color: #e52521; /* Mario Red */
+  margin: 0 0 5px 0;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 0px #ffffff, 4px 4px 0px rgba(0, 0, 0, 0.1);
+  font-weight: 900;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #0070cd; /* Nintendo Blue */
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.gameContainer {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 20px;
+  border: 4px solid #0070cd; /* Thick blue cartoon border */
+  box-shadow: 0 10px 0px rgba(0, 70, 205, 0.2);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.statusBar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #0070cd;
+}
+
+.helpIconBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0070cd;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.instructions {
+  font-size: 0.85rem;
+  margin: 0 0 15px 0;
+  color: #555;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  background-color: #fdb924; /* Mario Block Yellow */
+  border-radius: 14px;
+  border: 3px solid #b87d00;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 4px 0px #b87d00, inset 0 -4px 0px rgba(0,0,0,0.15);
+  transition: transform 0.1s ease;
+}
+
+.cell:active {
+  transform: translateY(4px);
+  box-shadow: 0 0px 0px #b87d00;
+}
+
+.cellRevealed {
+  background-color: #ffffff;
+  border: 3px solid #eef7ff;
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.05);
+  cursor: default;
+  transform: none !important;
+}
+
+.cellQuestionMark {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #e52521; /* Mario Red */
+  color: white;
+  border: 3px solid #b01714;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+  box-shadow: 0 5px 0px #b01714;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0px #b01714;
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  border-color: #999;
+  box-shadow: 0 5px 0px #999;
+  cursor: not-allowed;
+}
+
+.btnGreen {
+  background-color: #43a047;
+  border-color: #2e7d32;
+  box-shadow: 0 5px 0px #2e7d32;
+}
+
+.btnGreen:active:not(:disabled) {
+  box-shadow: 0 1px 0px #2e7d32;
+}
+
+.btnOrange {
+  background-color: #ff9800;
+  border-color: #e65100;
+  box-shadow: 0 5px 0px #e65100;
+}
+
+.btnOrange:active:not(:disabled) {
+  box-shadow: 0 1px 0px #e65100;
+}
+
+.btnBlue {
+  background-color: #0070cd;
+  border-color: #004480;
+  box-shadow: 0 5px 0px #004480;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btnBlue:active:not(:disabled) {
+  box-shadow: 0 1px 0px #004480;
+}
+
+.tradeBtn {
+  background-color: #ffffff;
+  color: #333;
+  border: 3px solid #0070cd;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 6px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 0px #004480;
+  box-sizing: border-box;
+}
+
+.tradeBtn:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 0px 0px #004480;
+}
+
+.tradeBtn:disabled {
+  opacity: 0.4;
+  transform: none !important;
+  cursor: not-allowed;
+}
+
+.tradeBtnCombo {
+  border-color: #fdb924;
+  background-color: #fffdf3;
+  box-shadow: 0 4px 0px #b87d00;
+}
+
+.tradeBtnDuplicate {
+  border-color: #ff9800;
+  background-color: #fff8f0;
+  box-shadow: 0 4px 0px #e65100;
+}
+
+.catalogSectionHeader {
+  margin-top: 18px;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.colorGolden { color: #fdb924; }
+.colorPlata { color: #0070cd; }
+.colorBronce { color: #c59b76; }
+
+.cardsCatalogGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.mysteryCard {
+  height: 100px;
+  background-color: #0070cd;
+  border: 3px solid #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  box-shadow: 0 6px 0px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0,70,205,0.3);
+  transition: transform 0.2s;
+}
+
+.mysteryCard:hover {
+  transform: scale(1.03);
+}
+
+.mysteryCardDisabled {
+  opacity: 0.25;
+  pointer-events: none;
+  background-color: #7f8c8d;
+  border-color: #bdc3c7;
+  box-shadow: none;
+}
+
+.mysteryCardRevealed {
+  background-color: #ebf5ee;
+  border: 3px solid #43a047; /* Pipe Green */
+  color: #1b5e20;
+  cursor: default;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.05);
+  transform: none !important;
+}
+
+.downloadCard {
+  background: #ffffff;
+  border: 4px solid #43a047; /* Pipe Green certificate border */
+  border-radius: 16px;
+  padding: 15px;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.finalList {
+  text-align: left;
+  background: #f0f9f4;
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px dashed #43a047;
+  list-style: none;
+  margin: 15px 0;
+}
+
+.finalListItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.inventory {
+  margin-top: 20px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 380px;
+  border: 3px solid #fdb924;
+  box-shadow: 0 6px 0px rgba(253, 185, 36, 0.2);
+}
+
+.invGrid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.invItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.invCount {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #fdb924;
+  text-shadow: 1px 1px 0px #333;
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  background: white;
+  padding: 25px;
+  border-radius: 24px;
+  text-align: center;
+  max-width: 340px;
+  border: 4px solid #fdb924;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalIconContainer {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.modalTitleSmall {
+  font-size: 1.3rem;
+}
+
+.rulesContainer {
+  text-align: left;
+  margin: 15px 0;
+}
+
+.ruleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  margin-bottom: 12px;
+  color: #444;
+  line-height: 1.35;
+}
+
+.ruleIcon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
